@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Bushi triggers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Bushi</h1>
+      </div>
+      <registration></registration>
+      <list></list>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
+    <script type="riot/tag" src="./registration.tag"></script>
+    <script type="riot/tag" src="./list.tag"></script>
+    <script src="https://cdn.jsdelivr.net/npm/riot@3.13.2/riot+compiler.min.js"></script>
+    <script src="./data_handler.js"></script>
+    <script>
+     firebase.initializeApp(config);
+     var dataHandler = new DataHandler();
+     riot.mount('registration', { handler: dataHandler })
+     riot.mount('list', { handler: dataHandler })
+    </script>
+
+  </body>
+</html>
