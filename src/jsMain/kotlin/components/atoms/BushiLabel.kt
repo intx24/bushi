@@ -5,7 +5,7 @@ import kotlinx.html.label
 import kotlinx.html.span
 
 fun HtmlBlockTag.bushiLabel(labelFor: String, text: String, errorMessage: String? = null) {
-    label {
+    label(classes = "label") {
         htmlFor = labelFor
         +text
         if (!errorMessage.isNullOrBlank()) {
