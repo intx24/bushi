@@ -76,7 +76,7 @@ val FormSectionComponent = functionalComponent<FormSectionComponentProps> { prop
         }
     }
 
-    val onChangeResponseInput: (Event) -> Unit = {
+    val onChangeResponseTextarea: (Event) -> Unit = {
         val value = (it.target as HTMLTextAreaElement).value.trim()
         setStateResponseValue(value)
         validateResponseValue(value)
@@ -93,6 +93,9 @@ val FormSectionComponent = functionalComponent<FormSectionComponentProps> { prop
         setStateResponseValue("")
         setStateIconEmojiValue("")
         setStateIconUrlValue("")
+        setStateTriggerErrorMessage("")
+        setStateResponseErrorMessage("")
+        setStateSubmitErrorMessage("")
     }
 
     val submit: (Event) -> Unit = {
@@ -110,6 +113,8 @@ val FormSectionComponent = functionalComponent<FormSectionComponentProps> { prop
         console.log("iconEmoji", stateIconEmojiValue)
 
         // TODO: call api save method
+        
+
         if (error.isBlank()) {
             clearForm()
             // update definition list on view
@@ -192,7 +197,7 @@ val FormSectionComponent = functionalComponent<FormSectionComponentProps> { prop
                                     value = stateResponseValue
                                     required = true
                                     maxLength = 20
-                                    onChangeFunction = onChangeResponseInput
+                                    onChangeFunction = onChangeResponseTextarea
                                 }
                             }
                         )
