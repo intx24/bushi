@@ -36,7 +36,7 @@ val TextareaComponent = functionalComponent<TextareaComponentProps> { props ->
             value = stateValue
             placeholder = props.placeholder.orEmpty()
             required = props.required ?: false
-            attrs.maxLength = props.maxLength.takeIf { it != null }?.toString() ?: ""
+            maxLength = props.maxLength.takeIf { it != null }?.toString() ?: ""
             onChangeFunction = changeHandler
         }
     }
