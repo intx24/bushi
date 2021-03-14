@@ -211,7 +211,6 @@ val FormSectionComponent = functionalComponent<FormSectionComponentProps> { prop
                                 textInputProps = jsObject {
                                     id = "iconEmojiInput"
                                     value = stateIconEmojiValue
-                                    required = true
                                     onChangeFunction = onChangeIconEmojiInput
                                 }
                             }
