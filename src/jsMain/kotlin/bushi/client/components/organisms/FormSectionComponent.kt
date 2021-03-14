@@ -150,7 +150,6 @@ val FormSectionComponent = functionalComponent<FormSectionComponentProps> { prop
                                 textInputProps = jsObject {
                                     id = "triggerInput"
                                     value = stateTriggerValue
-                                    placeholder = ":placeholder:"
                                     required = true
                                     maxLength = 20
                                     onChangeFunction = onChangeTriggerInput
