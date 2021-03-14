@@ -11,6 +11,7 @@ version = "1.0-SNAPSHOT"
 repositories {
     jcenter()
     mavenCentral()
+    maven { url = uri("https://dl.bintray.com/kotlin/kotlin-js-wrappers") }
     maven { url = uri("https://dl.bintray.com/kotlin/kotlinx") }
     maven { url = uri("https://dl.bintray.com/kotlin/ktor") }
 }
@@ -67,7 +68,8 @@ kotlin {
         }
         val jsMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.2")
+                implementation("org.jetbrains:kotlin-react:16.13.1-pre.113-kotlin-1.4.0")
+                implementation("org.jetbrains:kotlin-react-dom:16.13.1-pre.113-kotlin-1.4.0")
             }
         }
         val jsTest by getting {
